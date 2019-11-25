@@ -17,8 +17,9 @@ interface sayHi {
 }
 
 abstract class Program{
+    private typeName: string = 'program'
     run():void{ 
-        console.log(`I am program, and I can run.`)
+        console.log(`I am program, and I can run. \n My type name is ${this.typeName}`)
      }
 }
 
@@ -26,28 +27,36 @@ abstract class Program{
 
 class TS extends Program {
     readonly name: string
-    private subname: string = 'good'
+    // private subname: string = 'good'
     constructor(n:string){
         super()
         this.name = n
     }
     log(){
-        let sub = this.subname;
-        console.log('hi typescript', sub)
+        // let sub = this.subname;
+        console.log('hi typescript')
     }
     sayHi:sayHi = (str)=>{
         console.log(`I can run, and I'm TS. and you ${str}`)
         this.run()
     }
+    say(){}
 }
 
-class JAVASCRIPT{
-    name: string
+class JAVASCRIPT extends Program{
+    readonly name: string
+    // private subname: string = 'good js'
     constructor(n:string){
+        super()
         this.name = n
     }
+    log(){}
+    sayHi:sayHi = ()=>{}
     say(){
         console.log("hello javascript")
+    }
+    static isJavascript(s:string):boolean{
+        return s === 'javascript'
     }
 }
 
@@ -73,8 +82,13 @@ ts.sayHi('Goo')
 
 enum COLOR{ red="red", green="green"}
 enum WORD { A="a", B="b" }
-let x = COLOR.green
+let x:string = COLOR.green
 x = WORD.A
 
+
+let js1:JAVASCRIPT;
+let ts1 = new TS('goo')
+js1 = ts1;
+ts1 = js1;
 
 

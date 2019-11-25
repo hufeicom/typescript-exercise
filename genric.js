@@ -18,17 +18,18 @@ var myecho = echo;
 console.log(myecho(1));
 var Program = /** @class */ (function () {
     function Program() {
+        this.typeName = 'program';
     }
     Program.prototype.run = function () {
-        console.log("I am program, and I can run.");
+        console.log("I am program, and I can run. \n My type name is " + this.typeName);
     };
     return Program;
 }());
 var TS = /** @class */ (function (_super) {
     __extends(TS, _super);
+    // private subname: string = 'good'
     function TS(n) {
         var _this = _super.call(this) || this;
-        _this.subname = 'good';
         _this.sayHi = function (str) {
             console.log("I can run, and I'm TS. and you " + str);
             _this.run();
@@ -37,20 +38,30 @@ var TS = /** @class */ (function (_super) {
         return _this;
     }
     TS.prototype.log = function () {
-        var sub = this.subname;
-        console.log('hi typescript', sub);
+        // let sub = this.subname;
+        console.log('hi typescript');
     };
+    TS.prototype.say = function () { };
     return TS;
 }(Program));
-var JAVASCRIPT = /** @class */ (function () {
+var JAVASCRIPT = /** @class */ (function (_super) {
+    __extends(JAVASCRIPT, _super);
+    // private subname: string = 'good js'
     function JAVASCRIPT(n) {
-        this.name = n;
+        var _this = _super.call(this) || this;
+        _this.sayHi = function () { };
+        _this.name = n;
+        return _this;
     }
+    JAVASCRIPT.prototype.log = function () { };
     JAVASCRIPT.prototype.say = function () {
         console.log("hello javascript");
     };
+    JAVASCRIPT.isJavascript = function (s) {
+        return s === 'javascript';
+    };
     return JAVASCRIPT;
-}());
+}(Program));
 function T(args) {
     if (args instanceof TS) {
         args.log();
@@ -69,3 +80,19 @@ T(ts);
 T(js);
 T(undefined);
 ts.sayHi('Goo');
+var COLOR;
+(function (COLOR) {
+    COLOR["red"] = "red";
+    COLOR["green"] = "green";
+})(COLOR || (COLOR = {}));
+var WORD;
+(function (WORD) {
+    WORD["A"] = "a";
+    WORD["B"] = "b";
+})(WORD || (WORD = {}));
+var x = COLOR.green;
+x = WORD.A;
+var js1;
+var ts1 = new TS('goo');
+js1 = ts1;
+ts1 = js1;
