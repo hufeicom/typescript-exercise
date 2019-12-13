@@ -18,7 +18,7 @@ interface sayHi {
 
 abstract class Program{
     private typeName: string = 'program'
-    run():void{ 
+    protected  run():void{ 
         console.log(`I am program, and I can run. \n My type name is ${this.typeName}`)
      }
 }
