@@ -1,6 +1,11 @@
 interface Say {
-    name:string;
+    // name:string;
     log(s:string);
+}
+
+interface NoUse {
+    test: string;
+    log(s:string):void;
 }
 
 
@@ -30,3 +35,22 @@ class GoodPeople implements SayHello{
 }
 (new GoodPeople()).sayHi('hello');
 (new GoodPeople()).log('log');
+
+
+interface Name {
+    first: string;
+    second: string;
+}
+
+let n2:Name;
+
+n2 = {
+    first: 'boo',
+    second: 'foo'
+}
+
+n2 = {
+    second: 'boo'
+}
+
+
