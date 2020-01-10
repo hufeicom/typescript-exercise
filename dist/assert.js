@@ -1,2 +1,2 @@
-const len = 'boo\'s name'.length;
+export const len = 'boo\'s name'.length;
 console.log(len);

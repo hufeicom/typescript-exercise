@@ -37,7 +37,7 @@ class GoodPeople implements SayHello{
 (new GoodPeople()).log('log');
 
 
-interface Name {
+export interface Name {
     first: string;
     second: string;
 }
@@ -49,8 +49,6 @@ n2 = {
     second: 'foo'
 }
 
-n2 = {
-    second: 'boo'
-}
+
 
 

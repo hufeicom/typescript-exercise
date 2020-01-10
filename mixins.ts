@@ -32,21 +32,21 @@ function Activatable<TBase extends Constructor>(Base: TBase) {
 ///////////
 
 // 简答的类
-class User {
+class People {
   name = '';
 }
 
-class Say{
+export class Say{
     say(){
         console.log('I can say')
     }
 }
 
-// 添加 TimesTamped 的 User
-const TimestampedUser = TimesTamped(User);
+// 添加 TimesTamped 的 People
+const TimestampedUser = TimesTamped(People);
 
 // Tina TimesTamped 和 Activatable 的类
-const TimestampedActivatableUser = TimesTamped(Activatable(User));
+const TimestampedActivatableUser = TimesTamped(Activatable(People));
 
 //////////
 // 使用组合类

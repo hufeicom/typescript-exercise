@@ -17,3 +17,8 @@ class GoodPeople {
 }
 (new GoodPeople()).sayHi('hello');
 (new GoodPeople()).log('log');
+let n2;
+n2 = {
+    first: 'boo',
+    second: 'foo'
+};

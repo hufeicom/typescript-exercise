@@ -1,6 +1,6 @@
 let n = "Global Name";
 
-function(){
+export function f(){
     let o = {
         name: "O NAME",
         say: ()=>{

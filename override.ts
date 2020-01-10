@@ -10,11 +10,13 @@ function say(x:any, s?:any):void{
     }
 }
 
+
 enum Color {
-    Symbol('red')
-    Symbol('blue')
-    Symbol('green')
+    red,
+    blue,
+    green
 }
+
 
 console.log(Color[Symbol('red')])
 
