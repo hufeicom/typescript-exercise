@@ -1,1 +1,1 @@
-declare const len: number;
+export declare const len: number;
